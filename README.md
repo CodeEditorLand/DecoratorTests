@@ -1,15 +1,29 @@
 # JavaScript Decorator Tests
 
-This repo contains a single file with many behavioral tests for the upcoming [decorators](https://github.com/tc39/proposal-decorators) and [decorator metadata](https://github.com/tc39/proposal-decorator-metadata) features in JavaScript. It's intended to be easy to use for testing a given JavaScript implementation: just run the file [`decorator-tests.js`](./decorator-tests.js) and see what `console.log` prints (although you may need to comment out some of the tests if your implementation emits code containing syntax errors, which TypeScript currently does). The source code for that file is in TypeScript (see [`decorator-tests.ts`](./decorator-tests.ts)) to make authoring the tests easier (e.g. to catch typos). I'm planning to use these tests to help me implement JavaScript decorators for [esbuild](https://github.com/evanw/esbuild).
+This repo contains a single file with many behavioral tests for the upcoming
+[decorators](https://github.com/tc39/proposal-decorators) and
+[decorator metadata](https://github.com/tc39/proposal-decorator-metadata)
+features in JavaScript. It's intended to be easy to use for testing a given
+JavaScript implementation: just run the file
+[`decorator-tests.js`](./decorator-tests.js) and see what `console.log` prints
+(although you may need to comment out some of the tests if your implementation
+emits code containing syntax errors, which TypeScript currently does). The
+source code for that file is in TypeScript (see
+[`decorator-tests.ts`](./decorator-tests.ts)) to make authoring the tests easier
+(e.g. to catch typos). I'm planning to use these tests to help me implement
+JavaScript decorators for [esbuild](https://github.com/evanw/esbuild).
 
 Some caveats:
 
-* The specifications are still a work in progress, and may be outdated
-* I'm not the author of the specifications and I may have misinterpreted them
-* Deviations from the specifications by the tools below may be intentional
-* The specifications themselves don't yet have good test coverage (see [this](https://github.com/tc39/test262/issues/3997) and [this](https://github.com/tc39/test262/issues/4042))
+- The specifications are still a work in progress, and may be outdated
+- I'm not the author of the specifications and I may have misinterpreted them
+- Deviations from the specifications by the tools below may be intentional
+- The specifications themselves don't yet have good test coverage (see
+  [this](https://github.com/tc39/test262/issues/3997) and
+  [this](https://github.com/tc39/test262/issues/4042))
 
-You can use `node run.mjs` after `npm install` to run and update the tests below.
+You can use `node run.mjs` after `npm install` to run and update the tests
+below.
 
 ## Test Results
 
@@ -17,7 +31,8 @@ You can use `node run.mjs` after `npm install` to run and update the tests below
 
 Known issues:
 
-* Class binding references are incorrect if a decorator changes them. ([Bug #3787](https://github.com/evanw/esbuild/issues/3787))
+- Class binding references are incorrect if a decorator changes them.
+  ([Bug #3787](https://github.com/evanw/esbuild/issues/3787))
 
 <details>
 <summary>❌ 9 checks failed (click for details)</summary>
@@ -77,7 +92,8 @@ Known issues:
 
 Known issues:
 
-* References to the uninitialized class name within a decorator return `undefined` instead of throwing a `ReferenceError`.
+- References to the uninitialized class name within a decorator return
+  `undefined` instead of throwing a `ReferenceError`.
 
 <details>
 <summary>❌ 11 checks failed (click for details)</summary>
@@ -147,10 +163,14 @@ Known issues:
 
 Known issues:
 
-* In decorators of static fields and static accessors, the value of `this` appears to be incorrect.
-* Using `await` within a decorator can cause TypeScript to emit invalid code containing a syntax error.
-* References to the uninitialized class name within a decorator return `undefined` instead of throwing a `ReferenceError`.
-* TypeScript doesn't prevent `addInitializer` from adding more initializers after `decorationState.[[Finished]]` is true.
+- In decorators of static fields and static accessors, the value of `this`
+  appears to be incorrect.
+- Using `await` within a decorator can cause TypeScript to emit invalid code
+  containing a syntax error.
+- References to the uninitialized class name within a decorator return
+  `undefined` instead of throwing a `ReferenceError`.
+- TypeScript doesn't prevent `addInitializer` from adding more initializers
+  after `decorationState.[[Finished]]` is true.
 
 <details>
 <summary>❌ 44 checks failed (click for details)</summary>
@@ -377,8 +397,10 @@ Known issues:
 
 Known issues:
 
-* SWC implements an older version of the specification from 2022 with outdated behavior.
-* Generated code sometimes has syntax errors because SWC fails to transform certain decorators.
+- SWC implements an older version of the specification from 2022 with outdated
+  behavior.
+- Generated code sometimes has syntax errors because SWC fails to transform
+  certain decorators.
 
 <details>
 <summary>❌ 247 checks failed (click for details)</summary>
