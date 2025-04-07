@@ -4,6 +4,6 @@
 		"@babel/plugin-proposal-decorators": "7.25.9",
 		"@swc/core": "1.11.16",
 		"esbuild": "0.25.2",
-		"typescript": "5.8.2"
+		"typescript": "5.8.3"
 	}
 }
