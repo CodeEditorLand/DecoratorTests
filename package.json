@@ -2,8 +2,8 @@
 	"dependencies": {
 		"@babel/core": "7.26.10",
 		"@babel/plugin-proposal-decorators": "7.25.9",
-		"@swc/core": "1.11.21",
-		"esbuild": "0.25.2",
+		"@swc/core": "1.11.22",
+		"esbuild": "0.25.3",
 		"typescript": "5.8.3"
 	}
 }
