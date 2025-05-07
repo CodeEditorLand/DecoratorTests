@@ -3,7 +3,7 @@
 		"@babel/core": "7.27.1",
 		"@babel/plugin-proposal-decorators": "7.27.1",
 		"@swc/core": "1.11.24",
-		"esbuild": "0.25.3",
+		"esbuild": "0.25.4",
 		"typescript": "5.8.3"
 	}
 }
